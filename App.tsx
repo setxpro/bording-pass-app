@@ -1,33 +1,31 @@
 import Home from "@/app/home";
 
 import {
-    useFonts,
-    Poppins_700Bold,
-    Poppins_500Medium,
-    Poppins_400Regular,
-    Poppins_800ExtraBold
-} from '@expo-google-fonts/poppins'
+  useFonts,
+  Poppins_700Bold,
+  Poppins_500Medium,
+  Poppins_400Regular,
+  Poppins_800ExtraBold,
+} from "@expo-google-fonts/poppins";
 
 import { StatusBar } from "expo-status-bar";
 
-
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Poppins_700Bold,
+    Poppins_500Medium,
+    Poppins_400Regular,
+    Poppins_800ExtraBold,
+  });
 
-    const [fontsLoaded] = useFonts({
-        Poppins_700Bold,
-        Poppins_500Medium,
-        Poppins_400Regular,
-        Poppins_800ExtraBold
-    })
-
-    if (!fontsLoaded) {
-        return null
-    }
- 
-    return (
-        <>
-            <Home />
-            <StatusBar style="light" backgroundColor="transparent" translucent/>
-        </>
-    )
+  if (!fontsLoaded) {
+    return null;
   }
+
+  return (
+    <>
+      <Home />
+      <StatusBar style="light" backgroundColor="transparent" translucent />
+    </>
+  );
+}
